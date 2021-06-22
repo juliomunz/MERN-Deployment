@@ -12,7 +12,7 @@ export default class PetService {
         } catch (err) {
             return err;
         }
-    };
+    }
     
     async getAllPets() {
         try {
@@ -22,7 +22,7 @@ export default class PetService {
         } catch (err) {
             return err;  
         }
-}
+    }
     async createPet(pet) {
         try {
             const newPet = await axios.post(`http://localhost:8000/api/pets/new`, pet);
