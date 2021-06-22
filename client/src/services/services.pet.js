@@ -26,7 +26,8 @@ export default class PetService {
     async createPet(pet) {
         try {
             const newPet = await axios.post(`http://localhost:8000/api/pets/new`, pet);
-            return pet.data.pet;
+            console.log(newPet)
+            return newPet.data.pet;
         } catch (err) {
             return err;   
         }
