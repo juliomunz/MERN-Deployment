@@ -9,10 +9,6 @@ import Home from './views/Home';
 import PetDetail from './views/PetDetail';
 import PetForm from './views/PetForm';
 
-// import Home from './views/Home';
-// import PetDetail from './views/PetDetail';
-// import PetForm from './views/PetForm';
-
 function App() {
   return (
     <div className="container">

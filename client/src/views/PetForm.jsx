@@ -43,7 +43,7 @@ const PetForm = () => {
 
     }
     const handleCommit = (e)=>{
-        console.log('hola llegue acá')
+        // console.log('hola llegue acá')
         id ? updatePet(e) : createPet(e);
         
     }
@@ -74,7 +74,7 @@ const PetForm = () => {
             </div>
         <div className="card mt-1">
             <div className="card-body">
-                <h3 className="text-center">{id ? 'Edit' : 'Add Pet'}</h3>
+                <h3 className="text-center">{id ? 'Edit Pet' : 'Add Pet'}</h3>
                 <Form onSubmit={(e) => handleCommit(e)}>
                     <div>
                         <label name="title">Pet Name:</label>

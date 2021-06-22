@@ -1,4 +1,3 @@
-import Card from 'react-bootstrap/Card';
 import Button from 'react-bootstrap/Button'
 import React, { useEffect, useState } from 'react';
 import PetService from '../services/services.pet'
