@@ -32,10 +32,16 @@ const PetForm = () => {
     }
 
     const createPet = async (e) =>{
-        e.preventDefault();
-        await petService.createPet(pet);
-        history.push('/');
+        try {
+            e.preventDefault();
+            await petService.createPet(pet);
+            history.push('/');
+        } catch (err) {
+            return err;
+        }
     }
+
+
     const updatePet = async (e) =>{
         e.preventDefault();
         await petService.updatePet(id,pet);
@@ -43,7 +49,6 @@ const PetForm = () => {
 
     }
     const handleCommit = (e)=>{
-        // console.log('hola llegue acá')
         id ? updatePet(e) : createPet(e);
         
     }

@@ -7,7 +7,7 @@ export default class PetService {
     async getOneSinglePet (id){
         try {
             const pet = await axios.get(`http://localhost:8000/api/pets/${id}`);
-            console.log(pet)
+            //console.log(pet)
             return pet.data.petData;
         } catch (err) {
             return err;
@@ -17,7 +17,7 @@ export default class PetService {
     async getAllPets() {
         try {
             const petsList = await axios.get(`http://localhost:8000/api/pets`);
-            console.log(petsList)
+            //console.log(petsList)
             return petsList.data.pets;
         } catch (err) {
             return err;  
@@ -27,9 +27,12 @@ export default class PetService {
         try {
             const newPet = await axios.post(`http://localhost:8000/api/pets/new`, pet);
             console.log(newPet)
-            return newPet.data.pet;
-        } catch (err) {
-            return err;   
+                    return newPet.data.pet;
+                }
+        catch (err) 
+        {
+            console.log(err.response)
+            return err;
         }
     }
 

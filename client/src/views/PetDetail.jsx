@@ -1,7 +1,7 @@
 import Button from 'react-bootstrap/Button'
 import React, { useEffect, useState } from 'react';
 import PetService from '../services/services.pet'
-import {Link, useParams } from 'react-router-dom';
+import {Link, useHistory, useParams } from 'react-router-dom';
 import Navigation from './Navigation';
 
 const PetDetail = () => {
@@ -9,6 +9,7 @@ const PetDetail = () => {
     const { id } = useParams();
     const petService = new PetService;
     const [pet, setPet] = useState('');
+    const history = useHistory();
 
     const getASinglePetFromService = async () => {
         try {
@@ -36,6 +37,8 @@ const PetDetail = () => {
         }
         catch(err){
             return err;
+        } finally {
+            history.push('/')
         }
     }
 

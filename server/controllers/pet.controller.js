@@ -11,7 +11,8 @@ module.exports.createNewPet = (req, res) => {
     //console.log('llegue aqui',req.body);
     Pet.create(req.body)
     .then(newPet => res.send({pet: newPet}))
-    .catch(err => res.send({errors: err}));
+    //.catch(err => res.send({errors: err}));
+    .catch(err => res.status(404).json(err));
 }
 
 module.exports.getPetByID = (req, res) => {
